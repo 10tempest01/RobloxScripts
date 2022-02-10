@@ -15,8 +15,8 @@ part.CFrame = CFrame.new(10000, 10000-10, 10000)
 end
 wait(0.1)
 plr.Character.HumanoidRootPart.CFrame = invispos
-plr.Character.HumanoidRootPart.CanCollide = true
 wait(0.5)
 joint.Parent = game.ReplicatedStorage
+plr.Character.HumanoidRootPart.CanCollide = true
 wait(0.5)
 plr.Character.HumanoidRootPart.CFrame = savedpos
