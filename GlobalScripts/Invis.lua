@@ -16,7 +16,7 @@ end
 wait(0.1)
 plr.Character.HumanoidRootPart.CFrame = getgenv().invispos
 wait(0.5)
-joint.Parent = game.ReplicatedStorage
+joint:Destroy()
 plr.Character.HumanoidRootPart.CanCollide = true
 wait(0.5)
 plr.Character.HumanoidRootPart.CFrame = savedpos
