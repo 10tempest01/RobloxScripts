@@ -14,7 +14,7 @@ part.Size = Vector3.new(100, 5, 100)
 part.CFrame = invispos - Vector3.new
 end
 wait(0.1)
-plr.Character.HumanoidRootPart.CFrame = invispos - Vector3.new(0, 5, 0)
+plr.Character.HumanoidRootPart.CFrame = invispos - CFrame.new(0, 5, 0)
 wait(0.5)
 joint.Parent = game.ReplicatedStorage
 plr.Character.HumanoidRootPart.CanCollide = true
