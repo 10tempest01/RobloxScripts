@@ -11,10 +11,10 @@ local part = Instance.new("Part", workspace)
 part.Anchored = true
 part.CanCollide = true
 part.Size = Vector3.new(100, 5, 100)
-part.CFrame = invispos - Vector3.new
+part.CFrame = invispos - Vector3.new(0, 5, 0)
 end
 wait(0.1)
-plr.Character.HumanoidRootPart.CFrame = invispos - CFrame.new(0, 5, 0)
+plr.Character.HumanoidRootPart.CFrame = invispos
 wait(0.5)
 joint.Parent = game.ReplicatedStorage
 plr.Character.HumanoidRootPart.CanCollide = true
