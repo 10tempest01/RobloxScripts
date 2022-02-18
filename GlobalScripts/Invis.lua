@@ -16,7 +16,7 @@ part.CFrame = CFrame.new(0, 5000-5, 0)
 wait(0.1)
 plr.Character.HumanoidRootPart.CFrame = CFrame.new(0, 5000, 0)
 wait(0.5)
-joint:Destroy()
+joint.Parent = game
 plr.Character.HumanoidRootPart.CanCollide = true
 wait(0.5)
 plr.Character.HumanoidRootPart.CFrame = savedpos
