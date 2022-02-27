@@ -1,3 +1,5 @@
+--Shift+P to use
+
 local pi    = math.pi
 local abs   = math.abs
 local clamp = math.clamp
