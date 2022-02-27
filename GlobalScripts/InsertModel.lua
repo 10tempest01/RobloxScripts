@@ -1,3 +1,10 @@
+--[[
+--How to use
+
+id = 123456789
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/InsertModel.lua", true))()
+]]
+
 local model = Instance.new("Model", game.Workspace)
 model.Name = id
 
