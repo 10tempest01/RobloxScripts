@@ -1,7 +1,7 @@
 --Credits to frel0/xamel on WeAreDevs for original script (i just made it more customizable)--
 --[[
-
 --How to use
+
 local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/FakeKickLibraryEdited.lua", true))()
 
 Message:Kick(
