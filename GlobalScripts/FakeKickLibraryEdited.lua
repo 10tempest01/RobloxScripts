@@ -1,10 +1,26 @@
 --Credits to frel0/xamel on WeAreDevs for original script (i just made it more customizable)--
+--[[
 
+--How to use
+local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/FakeKickLibraryEdited.lua", true))()
+
+Message:Kick(
+    "You were kicked from this experience: Your account has been banned from the game.", --Text
+    "Leave", --Button Text
+    267 --Error Code
+)
+
+Message:Crash(
+    "Roblox Crash", --Title
+    "An unexpected error occured and Roblox needs to quit. We're sorry!", --Body
+    false --Actually crash or not
+)
+]]
 local Message = {}
 
 function Message:Kick(msg, buttontxt, errcode)
 local FakeKick = Instance.new("ScreenGui")
-syn.protect_gui(FakeKick)
+if syn.protect_gui then syn.protect_gui(FakeKick) end
 local promptOverlay = Instance.new("Frame")
 local ErrorPrompt = Instance.new("Frame")
 local PromptLayout = Instance.new("UIListLayout")
