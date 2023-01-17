@@ -43,11 +43,11 @@ end
 
 print("-----------------------------------------------------------")
 print("FINAL: " .. counter .. "/" .. counterall .. " CHARACTERS (not including prestige)" .. counterall-counter .. " characters left")
-print("FINAL: " .. counternogamepass .. "/" .. counterall .. " CHARACTERS (not including prestige and gamepass)" .. counterall-counternogamepass .. " characters left")
+print("FINAL: " .. counter .. "/" .. counterall-#gamepasschars .. " CHARACTERS (not including prestige and gamepass)" .. (counterall-#gamepasschars)-counter .. " characters left")
 print("Last Updated: " .. dt:FormatLocalTime("LL", "en-us") .. " at " .. dt:FormatLocalTime("hh", "en-us") .. ":" .. dt:FormatLocalTime("mm", "en-us") .. " " .. dt:FormatLocalTime("A", "en-us"))
 
 table.insert(chartable, "\n**FINAL: " .. counter .. "/" .. counterall .. " CHARACTERS (not including prestige)** " .. counterall-counter .. " characters left")
-table.insert(chartable, "**FINAL: " .. counternogamepass .. "/" .. counterall .. " CHARACTERS (not including prestige and gamepass)** " .. counterall-counternogamepass .. " characters left")
+table.insert(chartable, "**FINAL: " .. counter .. "/" .. counterall-#gamepasschars .. " CHARACTERS (not including prestige and gamepass)** " .. (counterall-#gamepasschars)-counter .. " characters left")
 table.insert(chartable, "\n**Last Updated: " .. dt:FormatLocalTime("LL", "en-us") .. " at " .. dt:FormatLocalTime("hh", "en-us") .. ":" .. dt:FormatLocalTime("mm", "en-us") .. " " .. dt:FormatLocalTime("A", "en-us") .. "**")
 
 setclipboard(table.concat(chartable, "\n"))
