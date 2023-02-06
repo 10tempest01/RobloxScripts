@@ -27,5 +27,5 @@ spawn(function()
     end
 end)
 
-loadstring(game:HttpGetAsync("https://pastebin.com/raw/qc2SwaaA"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
 end
