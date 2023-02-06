@@ -25,8 +25,6 @@ spawn(function()
         wait(0.5)
         gold.Text = realgold .. "\nServerhopping.."
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping."
-        wait(0.5)
     end
 end)
 
