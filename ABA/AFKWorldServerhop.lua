@@ -13,7 +13,23 @@ if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
 
-gold.Text = gold.Text .. "\nServerhopping..."
+realgold = gold.Text
+
+spawn(function()
+    while wait() do
+        gold.Text = realgold .. "Serverhopping."
+        wait(0.5)
+        gold.Text = realgold .. "Serverhopping.."
+        wait(0.5)
+        gold.Text = realgold .. "Serverhopping..."
+        wait(0.5)
+        gold.Text = realgold .. "Serverhopping.."
+        wait(0.5)
+        gold.Text = realgold .. "Serverhopping."
+        wait(0.5)
+    end
+end)
+
 loadstring(game:HttpGet("https://pastebin.com/raw/qc2SwaaA"))()
 
 end
