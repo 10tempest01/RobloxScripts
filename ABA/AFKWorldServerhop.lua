@@ -27,5 +27,13 @@ spawn(function()
     end
 end)
 
+local randomized = math.random(1, 5)
+
+if randomized == 1 then
+    pcall(function() delfile("NotSameServers.json") end)
+end
+
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
+
+
 end
