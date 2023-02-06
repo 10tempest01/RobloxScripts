@@ -4,6 +4,7 @@ if game.PlaceId == 5411459567 then
 
 local plr = game:GetService("Players").LocalPlayer
 local gold = plr.PlayerGui:WaitForChild("ScreenGui").TextLabel
+print(gold.Text)
 local message = game:GetService("Workspace"):WaitForChild("Message").Text
 local number = message:match("%d+")
 local number = tonumber(number)
