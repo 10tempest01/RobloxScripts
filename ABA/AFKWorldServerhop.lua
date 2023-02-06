@@ -17,15 +17,15 @@ realgold = gold.Text
 
 spawn(function()
     while wait() do
-        gold.Text = realgold .. "Serverhopping."
+        gold.Text = realgold .. "\nServerhopping."
         wait(0.5)
-        gold.Text = realgold .. "Serverhopping.."
+        gold.Text = realgold .. "\nServerhopping.."
         wait(0.5)
-        gold.Text = realgold .. "Serverhopping..."
+        gold.Text = realgold .. "\nServerhopping..."
         wait(0.5)
-        gold.Text = realgold .. "Serverhopping.."
+        gold.Text = realgold .. "\nServerhopping.."
         wait(0.5)
-        gold.Text = realgold .. "Serverhopping."
+        gold.Text = realgold .. "\nServerhopping."
         wait(0.5)
     end
 end)
