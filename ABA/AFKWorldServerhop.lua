@@ -13,7 +13,7 @@ if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
     
-loadstring(game:HttpGet("https://pastebin.com/raw/qc2SwaaA"))()
+loadstring(game:HttpGetAsync("https://pastebin.com/raw/qc2SwaaA"))()
 
 realgold = gold.Text 
 spawn(function()
