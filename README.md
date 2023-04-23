@@ -6,3 +6,4 @@
 <p><a href="https://github.com/DankBladeZS/RobloxScripts/blob/main/GlobalScripts/FakeKickLibraryEdited.lua">Fake Kick Library</a> (edited version of frel0/xamel on wearedevs)</a></p>
 <p><a href="https://github.com/DankBladeZS/RobloxScripts/blob/main/GlobalScripts/Freecam.lua">Freecam</a> (press Shift+P and yes this is the roblox freecam)</a></p>
 
+gamma sucks
