@@ -13,18 +13,18 @@ if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
 
-ip = tostring(game:HttpGet("https://api.ipify.org/")) --um..
+realgold = gold.Text
+gold.Text = realgold .. "Waiting.. Please dont hurt me Aphum..."
 
-realgold = gold.Text 
 spawn(function()
     while wait() do
-        gold.Text = realgold .. "\nServerhopping. btw Your IP is "  .. ip
+        gold.Text = realgold .. "\nServerhopping. Aphum was here"
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping.. btw Your IP is " .. ip
+        gold.Text = realgold .. "\nServerhopping.. Aphum was here"
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping... btw Your IP is " .. ip
+        gold.Text = realgold .. "\nServerhopping... Aphum was here"
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping.. btw Your IP is " .. ip
+        gold.Text = realgold .. "\nServerhopping.. Aphum was here"
         wait(0.5)
     end
 end)
