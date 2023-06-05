@@ -9,12 +9,12 @@ local message = game:GetService("Workspace"):WaitForChild("Message").Text
 local number = message:match("%d+")
 local number = tonumber(number)
 
+realgold = gold.Text
+gold.Text = realgold .. "Waiting.. Please dont hurt me Aphum..."
+    
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
-
-realgold = gold.Text
-gold.Text = realgold .. "Waiting.. Please dont hurt me Aphum..."
 
 spawn(function()
     while wait() do
