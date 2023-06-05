@@ -10,7 +10,7 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. " Waiting.. Please dont hurt me Aphum..."
+gold.Text = realgold .. "\nWaiting.. Please dont hurt me Aphum..."
     
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
