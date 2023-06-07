@@ -10,7 +10,12 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting for payout...\nSponsored by Nova Hub 🌌"
+gold.Text = realgold .. "\nWaiting for payout...\nSponsored by Nova Hub "
+
+if number < getgenv().MaxTime then
+    wait(number + getgenv().PayoutDelay)
+end
+    
     
 numberlol = math.random(1, 10)
 if numberlol == 1 then
@@ -24,14 +29,6 @@ if numberlol == 1 then
                 end)
         end
                 
-                
-                
-                
-                
-                
-if number < getgenv().MaxTime then
-    wait(number + getgenv().PayoutDelay)
-end
     
 msg = "YOU AINT GETTIN NO GOLD 😭😭😭"
     
