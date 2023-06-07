@@ -2,6 +2,9 @@ repeat wait() until game:IsLoaded()
 
 if game.PlaceId == 5411459567 then
 
+rconsoleprint("@@Magenta@@")
+rconsoleprint("Raided by Nova Hub v2.6.4")
+    
 local plr = game:GetService("Players").LocalPlayer
 local gold = plr.PlayerGui:WaitForChild("ScreenGui").TextLabel
 print(gold.Text)
@@ -10,7 +13,7 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting...\n56 hours left..."
+gold.Text = realgold .. "\nWaiting for payout...\n"
     
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
