@@ -16,7 +16,7 @@ if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
     
-msg = "YOU AINT GETTIN ANY GOLD 😭😭😭"
+msg = "YOU AINT GETTIN NO GOLD 😭😭😭"
     
 spawn(function()
     while wait() do
