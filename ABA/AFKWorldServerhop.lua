@@ -12,18 +12,9 @@ local number = tonumber(number)
 realgold = gold.Text
 gold.Text = realgold .. "\nWaiting for payout...\nSponsored by Nova Hub 🌌"
 
-local Image = Drawing.new("Image")
-local Full = workspace.CurrentCamera.ViewportSize
-Image.Size = Vector2.new(750, 250)
-Image.Position = Vector2.new(600, 750)
-Image.Data = game:HttpGet("https://i.imgur.com/FkKC8AR.jpg")
-Image.Visible = true
-
-
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
-    
     
 msg = "YOU AINT GETTIN NO GOLD 😭😭😭"
     
