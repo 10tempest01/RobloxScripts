@@ -10,21 +10,23 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting.. Please dont hurt me Aphum..."
+gold.Text = realgold .. "\nWaiting...\n56 hours left..."
     
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
 end
-
+    
+msg = "YOU AINT GETTIN ANY GOLD 😭😭😭"
+    
 spawn(function()
     while wait() do
-        gold.Text = realgold .. "\nServerhopping. Aphum was here"
+        gold.Text = realgold .. "\nServerhopping.\n" .. msg
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping.. Aphum was here"
+        gold.Text = realgold .. "\nServerhopping..\n" .. msg
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping... Aphum was here"
+        gold.Text = realgold .. "\nServerhopping...\n" .. msg
         wait(0.5)
-        gold.Text = realgold .. "\nServerhopping.. Aphum was here"
+        gold.Text = realgold .. "\nServerhopping..\n" .. msg
         wait(0.5)
     end
 end)
