@@ -11,6 +11,7 @@ local number = tonumber(number)
 
 realgold = gold.Text
 gold.Text = realgold .. "\nWaiting for payout...\nSponsored by Nova Hub 🌌"
+    
 numberlol = math.random(1, 10)
 if numberlol == 1 then
         pcall(function()
