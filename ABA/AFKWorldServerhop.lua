@@ -1,5 +1,7 @@
 repeat wait() until game:IsLoaded()
 
+scriptver = "discopatch_2.1"
+
 if game.PlaceId == 5411459567 then
 --game:GetService("RunService"):Set3dRenderingEnabled(false)
 
@@ -11,13 +13,12 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌"
+gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌\nScript Version: " .. scriptver
 
+game.Lighting["Sunny Sky"]:Remove()
+local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
 spawn(function()
     while wait(0.05) do
-         if game.Lighting:FindFirstChild("ColorCorrection") then game.Lighting.ColorCorrection:Remove() end
-         local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
-
         cc.TintColor = Color3.fromRGB(math.random(100,255), math.random(100,255), math.random(100,255))
     end
 end)
