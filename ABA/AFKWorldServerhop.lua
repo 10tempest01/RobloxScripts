@@ -11,7 +11,9 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting for payout...\nSponsored by Nova Hub 🌌"
+gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌"
+
+plr.PlayerGui:WaitForChild("ScreenGui").Frame.BackgroundColor3 = Color3.random()
 
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
