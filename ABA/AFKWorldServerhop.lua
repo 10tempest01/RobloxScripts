@@ -1,7 +1,7 @@
 repeat wait() until game:IsLoaded()
 
 if game.PlaceId == 5411459567 then
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+--game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 local plr = game:GetService("Players").LocalPlayer
 local gold = plr.PlayerGui:WaitForChild("ScreenGui").TextLabel
