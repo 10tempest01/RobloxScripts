@@ -18,7 +18,7 @@ spawn(function()
          if game.Lighting:FindFirstChild("ColorCorrection") then game.Lighting.ColorCorrection:Remove() end
          local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
 
-        cc.TintColor = Color3.fromRGB(math.random(200,255), math.random(200,255), math.random(200,255))
+        cc.TintColor = Color3.fromRGB(math.random(100,255), math.random(100,255), math.random(100,255))
     end
 end)
 
