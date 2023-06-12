@@ -13,7 +13,14 @@ local number = tonumber(number)
 realgold = gold.Text
 gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌"
 
-plr.PlayerGui:WaitForChild("ScreenGui").Frame.BackgroundColor3 = Color3.random()
+spawn(function()
+	while wait(0.25) do
+		if game.Lighting:FindFirstChild("ColorCorrection") then game.Lighting.ColorCorrection:Remove() end
+		local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
+
+		cc.TintColor = Color3.fromRGB(math.random(0,255), math.random(0,255), math.random(0,255))
+	end
+end)
 
 if number < getgenv().MaxTime then
     wait(number + getgenv().PayoutDelay)
