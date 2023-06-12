@@ -14,11 +14,11 @@ realgold = gold.Text
 gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌"
 
 spawn(function()
-    while wait(0.25) do
+    while wait(0.05) do
          if game.Lighting:FindFirstChild("ColorCorrection") then game.Lighting.ColorCorrection:Remove() end
          local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
 
-        cc.TintColor = Color3.fromRGB(math.random(100,255), math.random(100,255), math.random(100,255))
+        cc.TintColor = Color3.fromRGB(math.random(200,255), math.random(200,255), math.random(200,255))
     end
 end)
 
