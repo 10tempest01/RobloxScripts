@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 
-scriptver = "pre_2.2"
+scriptver = "pre_2.2a"
 
 if game.PlaceId == 5411459567 then
 --game:GetService("RunService"):Set3dRenderingEnabled(false)
@@ -15,7 +15,7 @@ local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. " (" .. plr.Name .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌\nScript Version: " .. scriptver
+gold.Text = realgold .. " (" .. plr.Name .. ")\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌\nScript Version: " .. scriptver
 
 game.Lighting["Sunny Sky"]:Remove()
 local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
