@@ -1,19 +1,21 @@
 repeat wait() until game:IsLoaded()
 
-scriptver = "discopatch_2.1a"
+scriptver = "pre_2.2"
 
 if game.PlaceId == 5411459567 then
 --game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 local plr = game:GetService("Players").LocalPlayer
 local gold = plr.PlayerGui:WaitForChild("ScreenGui").TextLabel
-print(gold.Text)
+local level = plr.PlayerGui:WaitForChild("ScreenGui").TextLabel2
+gold.Font = Enum.Font.TitilliumWeb
+level.Font = Enum.Font.TitilliumWeb
 local message = game:GetService("Workspace"):WaitForChild("Message").Text
 local number = message:match("%d+")
 local number = tonumber(number)
 
 realgold = gold.Text
-gold.Text = realgold .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌\nScript Version: " .. scriptver
+gold.Text = realgold .. " (" .. plr.Name .. "\nWaiting for payout...\n🌌 Sponsored by Nova Hub 🌌\nScript Version: " .. scriptver
 
 game.Lighting["Sunny Sky"]:Remove()
 local cc = Instance.new("ColorCorrectionEffect", game.Lighting)
