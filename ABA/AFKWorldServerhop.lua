@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 
-scriptver = "pre_2.2a"
+scriptver = "release_2.2"
 
 if game.PlaceId == 5411459567 then
 --game:GetService("RunService"):Set3dRenderingEnabled(false)
