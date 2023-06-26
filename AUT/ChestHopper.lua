@@ -1,3 +1,5 @@
+if game.PlaceId == 6846458508 then
+
 if getgenv().Disable3DRendering then
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
@@ -128,4 +130,5 @@ task.wait(4)
 
 if getgenv().Serverhop then
 	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
+end
 end
