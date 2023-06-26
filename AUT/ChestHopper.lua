@@ -99,6 +99,9 @@ local function webhookItems(itemsTable)
 			["thumbnail"] = {
 				["url"] = thumbnailurl
 			},
+			["footer"] = {
+				["text"] = "JobId: " .. game.JobId
+			},
 			["fields"] = {
 				-- Added in next function
 			}
