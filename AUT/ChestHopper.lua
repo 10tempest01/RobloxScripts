@@ -49,7 +49,7 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 		--TP and fire ProximityPrompt
 		if char and char:FindFirstChild("HumanoidRootPart") then
 			local hrp = char:FindFirstChild("HumanoidRootPart")
-			repeat task.wait(0.2)
+			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4, 0)
 				end
