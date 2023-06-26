@@ -95,7 +95,7 @@ local function webhookItems(itemsTable)
 	
 end
 
-if getgenv().NotifyOnStoringItems then
+if getgenv().NotifyOnStoringItems and itemsTableA ~= {} then
 	webhookItems(itemsTableA)
 end
 
