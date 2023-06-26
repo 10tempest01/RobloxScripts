@@ -82,7 +82,7 @@ local function webhookItems(itemsTable)
 		table.insert(data.embeds[1].fields, {
 			["name"] = "Item #" .. position,
 			["value"] = "```" ..item.. "```",
-			["inline"] = true
+			["inline"] = false
 		})
 	end
 	
