@@ -35,11 +35,13 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 	end
 end
 
+itemsTableA = {}
 local function store()
 	
 	if plr.Character then
 		for _, tool in pairs(plr.Backpack:GetChildren()) do
 			if getgenv().ItemsToStore[tool.Name] == true then
+			table.insert(itemsTableA, tool.Name)
 				tool.Parent = plr.Character
 			end
 		end
@@ -52,6 +54,49 @@ end
 
 if getgenv().AutoStore then
 	store()
+end
+
+local function webhookItems(itemsTable)
+	
+	thumbnailurl = game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="..plr.UserId.."&size=720x720&format=Png&isCircular=true")
+	thumbnailurl = game:GetService("HttpService"):JSONDecode(thumbnailurl)
+	thumbnailurl = thumbnailurl["data"][1]["imageUrl"]
+
+	data = {
+	["username"] = "Chest Hopper",
+	["avatar_url"] = "https://static.wikia.nocookie.net/a-universal-time-roblox/images/2/28/El_Chesto.PNG",
+	["content"] = "<@"..tostring(getgenv().DiscordIDToPing)..">",
+	["embeds"] = {{
+			["title"] = "Stored Items",
+			["color"] = tonumber(0xe9ff76),
+			["thumbnail"] = {
+				["url"] = thumbnailurl
+			},
+			["fields"] = {
+				-- Added in next function
+			}
+		}},
+	}
+	
+	for position, item in ipairs(itemsTable) do
+		table.insert(data.embeds[1].fields, {
+			["name"] = "Item #" .. position,
+			["value"] = "```" ..item.. "```",
+			["inline"] = true
+		})
+	end
+	
+	request({
+		Url = getgenv().WebhookURL,
+		Method = "POST",
+		Headers = {["Content-Type"] = "application/json"},
+		Body = game:GetService("HttpService"):JSONEncode(data)
+	})
+	
+end
+
+if getgenv().NotifyOnStoringItems then
+	webhookItems(itemsTableA)
 end
 
 task.wait(4)
