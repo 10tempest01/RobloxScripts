@@ -36,7 +36,7 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 		
 		--Chest checks
 		local chest = chestSpawn:FindFirstChild("Chest")
-		local highlight = Instance.new("Highlight", chest)
+		spawn(function() local highlight = Instance.new("Highlight", chest) end)
 		
 		repeat wait() until chest.RootPart:FindFirstChild("ProximityAttachment") and chest.RootPart:FindFirstChild("ProximityAttachment"):FindFirstChild("Interaction") or not chest
 		local proxAttachment = chest.RootPart:FindFirstChild("ProximityAttachment")
