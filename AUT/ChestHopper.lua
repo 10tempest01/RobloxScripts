@@ -53,7 +53,7 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 			local hrp = char:FindFirstChild("HumanoidRootPart")
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
-					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4, 0)
+					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
 				end
 				fireproximityprompt(proxPrompt)
 			until (not proxAttachment) or (not proxPrompt) or (not proxAttachment and not proxPrompt) or not chest:FindFirstChild("RootPart")
@@ -61,6 +61,10 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 		--
 	end
 end
+
+pcall(function()
+	plr.Character.HumanoidRootPart.Anchored = true
+end)
 
 itemsTableA = {}
 local function store()
