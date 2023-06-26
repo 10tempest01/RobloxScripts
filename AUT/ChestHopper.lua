@@ -6,6 +6,31 @@ repeat task.wait() until game:IsLoaded()
 
 local plr = game:GetService("Players").LocalPlayer
 
+local Noclip = nil
+local Clip = nil
+
+function noclip() --STOLEN MB...
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+
 for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChildren()) do
 	if chestSpawn:FindFirstChild("Chest") then
 		
@@ -26,7 +51,7 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 			local hrp = char:FindFirstChild("HumanoidRootPart")
 			repeat task.wait(0.2)
 				if chest:FindFirstChild("RootPart") then
-					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, 2, 0)
+					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4, 0)
 				end
 				fireproximityprompt(proxPrompt)
 			until (not proxAttachment) or (not proxPrompt) or (not proxAttachment and not proxPrompt) or not chest:FindFirstChild("RootPart")
