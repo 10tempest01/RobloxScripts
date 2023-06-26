@@ -1,4 +1,8 @@
-repeat wait() until game:IsLoaded()
+if getgenv().Disable3DRendering then
+	game:GetService("RunService"):Set3dRenderingEnabled(false)
+end
+
+repeat task.wait() until game:IsLoaded()
 
 local plr = game:GetService("Players").LocalPlayer
 
@@ -20,7 +24,7 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 		--TP and fire ProximityPrompt
 		if char and char:FindFirstChild("HumanoidRootPart") then
 			local hrp = char:FindFirstChild("HumanoidRootPart")
-			repeat wait(0.2)
+			repeat task.wait(0.2)
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, 2, 0)
 				end
@@ -41,12 +45,17 @@ local function store()
 		end
 	end
 	
-	wait(0.5)
+	task.wait(0.5)
 	
 	game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("InventoryService"):WaitForChild("RE"):WaitForChild("ItemInventory"):FireServer({["AddItems"] = true})
 end
 
-store()
-wait(4)
+if getgenv().AutoStore then
+	store()
+end
 
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
+task.wait(4)
+
+if getgenv().Serverhop then
+	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
+end
