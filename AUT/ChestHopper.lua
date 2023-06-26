@@ -4,7 +4,7 @@ if getgenv().Disable3DRendering then
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
 
-repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer.CharacterAdded:Wait()
 
 local plr = game:GetService("Players").LocalPlayer
 
