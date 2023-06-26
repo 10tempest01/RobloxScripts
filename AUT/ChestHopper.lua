@@ -95,12 +95,8 @@ local function webhookItems(itemsTable)
 	
 end
 
-if getgenv().NotifyOnStoringItems then
-	if itemsTableA == {} then
-		webhookItems({"Nothing"})
-	else
-		webhookItems(itemsTableA)
-	end
+if getgenv().NotifyOnStoringItems and #itemsTableA ~= 0 then
+	webhookItems(itemsTableA)
 end
 
 task.wait(4)
