@@ -54,7 +54,7 @@ local function chestFarm(chestSpawn)
 		local hrp = char:FindFirstChild("HumanoidRootPart")
 			
 		game:GetService("RunService").RenderStepped:Connect(function()
-			helpingPart.CFrame = hrp.CFrame - Vector3.new(0, 4, 0)
+			helpingPart.CFrame = hrp.CFrame - Vector3.new(0, 3.5, 0)
 		end)
 		
 		--TP and fire ProximityPrompt
