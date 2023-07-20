@@ -54,7 +54,6 @@ local function chestFarm(chestSpawn)
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
-					task.wait()
 					for _, p in pairs(char:GetDescendants()) do
 						if p:IsA("BasePart") then
 							p.Velocity = Vector3.new(0, 0, 0)
@@ -146,7 +145,7 @@ if getgenv().NotifyOnStoringItems and #itemsTableA ~= 0 then
 	webhookItems(itemsTableA)
 end
 
-task.wait(4)
+task.wait()
 
 if getgenv().Serverhop then
 	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/DankBladeZS/RobloxScripts/main/GlobalScripts/Serverhop.lua"))()
