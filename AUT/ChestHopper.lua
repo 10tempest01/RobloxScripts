@@ -55,7 +55,12 @@ local function chestFarm(chestSpawn)
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
 					task.wait()
-					hrp.Velocity, hrp.RotVelocity = Vector3.new(0, 0, 0), Vector3.new(0, 0, 0)
+					for _, p in pairs(char:GetDescendants()) do
+						if p:IsA("BasePart") then
+							p.Velocity = Vector3.new(0, 0, 0)
+							p.RotVelocity = Vector3.new(0, 0, 0)
+						end
+					end
 				end
 				fireproximityprompt(proxPrompt)
 			until (not proxAttachment) or (not proxPrompt) or (not proxAttachment and not proxPrompt) or not chest:FindFirstChild("RootPart")
