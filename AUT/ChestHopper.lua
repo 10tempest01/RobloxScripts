@@ -33,7 +33,7 @@ end
 
 noclip() -- to toggle noclip() and clip()
 
-for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChildren()) do
+local function chestFarm(chestSpawn)
 	if chestSpawn:FindFirstChild("Chest") then
 		
 		--Chest checks
@@ -53,8 +53,8 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 			local hrp = char:FindFirstChild("HumanoidRootPart")
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
-					hrp.Anchored = true
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
+					hrp.Anchored = true
 				end
 				fireproximityprompt(proxPrompt)
 			until (not proxAttachment) or (not proxPrompt) or (not proxAttachment and not proxPrompt) or not chest:FindFirstChild("RootPart")
@@ -64,9 +64,14 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 	end
 end
 
-pcall(function()
-	plr.Character.HumanoidRootPart.Anchored = true
-end)
+for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChildren()) do
+	chestFarm(chestSpawn)
+		
+	chestSpawn.ChildAdded:Connect(function()
+		chestFarm(chestSpawn)
+	end)
+end
+
 
 itemsTableA = {}
 local function store()
