@@ -54,6 +54,7 @@ local function chestFarm(chestSpawn)
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
+					task.wait(0.1)
 					hrp.Anchored = true
 				end
 				fireproximityprompt(proxPrompt)
