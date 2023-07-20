@@ -46,17 +46,19 @@ for _, chestSpawn in pairs(game:GetService("Workspace").ItemSpawns.Chests:GetChi
 		--
 		
 		--Character check
-		local char = plr.Character or plr.CharacterAdded:Wait()
+		local char = plr.Character or plr.CharacterAdded:Wait() and plr.Character
 		
 		--TP and fire ProximityPrompt
 		if char and char:FindFirstChild("HumanoidRootPart") then
 			local hrp = char:FindFirstChild("HumanoidRootPart")
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
+					hrp.Anchored = true
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
 				end
 				fireproximityprompt(proxPrompt)
 			until (not proxAttachment) or (not proxPrompt) or (not proxAttachment and not proxPrompt) or not chest:FindFirstChild("RootPart")
+			hrp.Anchored = false
 		end
 		--
 	end
