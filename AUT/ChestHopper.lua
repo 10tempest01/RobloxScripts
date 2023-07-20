@@ -33,6 +33,10 @@ end
 
 noclip() -- to toggle noclip() and clip()
 
+local helpingPart = Instance.new("Part", workspace)
+helpingPart.Anchored = true
+helpingPart.Size = Vector3.new(5, 1, 5)
+
 local function chestFarm(chestSpawn)
 	if chestSpawn:FindFirstChild("Chest") then
 		
@@ -47,10 +51,15 @@ local function chestFarm(chestSpawn)
 		
 		--Character check
 		local char = plr.Character or plr.CharacterAdded:Wait() and plr.Character
+		local hrp = char:FindFirstChild("HumanoidRootPart")
+			
+		game:GetService("RunService").RenderStepped:Connect(function()
+			helpingPart.CFrame = hrp.CFrame - Vector3.new(0, 4, 0)
+		end)
 		
 		--TP and fire ProximityPrompt
 		if char and char:FindFirstChild("HumanoidRootPart") then
-			local hrp = char:FindFirstChild("HumanoidRootPart")
+			
 			repeat task.wait()
 				if chest:FindFirstChild("RootPart") then
 					hrp.CFrame = chest.RootPart.CFrame + Vector3.new(0, -4.25, 0)
