@@ -224,7 +224,7 @@ function boxBase:Update()
         
         if Vis5 then
             self.Components.Name.Visible = true
-            self.Components.Name.Position = Vector2.new(TagPos.X, TagPos.Y - 5)
+            self.Components.Name.Position = Vector2.new(TagPos.X, TagPos.Y - 15)
             self.Components.Name.Text = self.Name
             self.Components.Name.Color = color
             
@@ -344,7 +344,7 @@ local function CharAdded(char)
             if c.Name == "HumanoidRootPart" then
                 ev:Disconnect()
                 ESP:Add(char, {
-                    Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and char.Humanoid.Health or "idk", char:FindFirstChild("Humanoid") and char.Humanoid.MaxHealth or "idk", race),
+                    Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and math.floor(char.Humanoid.Health) or "idk", char:FindFirstChild("Humanoid") and math.floor(char.Humanoid.MaxHealth) or "idk", race),
                     Player = p,
                     PrimaryPart = c
                 })
@@ -352,7 +352,7 @@ local function CharAdded(char)
         end)
     else
         ESP:Add(char, {
-            Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and char.Humanoid.Health or "idk", char:FindFirstChild("Humanoid") and char.Humanoid.MaxHealth or "idk", race),
+			Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and math.floor(char.Humanoid.Health) or "idk", char:FindFirstChild("Humanoid") and math.floor(char.Humanoid.MaxHealth) or "idk", race),
             Player = p,
             PrimaryPart = char.HumanoidRootPart
         })
