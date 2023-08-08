@@ -344,7 +344,7 @@ local function CharAdded(char)
             if c.Name == "HumanoidRootPart" then
                 ev:Disconnect()
                 ESP:Add(char, {
-                    Name = ("[%s] - (%s)"):format(p.Name, race),
+                    Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and char.Humanoid.Health or "idk", char:FindFirstChild("Humanoid") and char.Humanoid.MaxHealth or "idk", race),
                     Player = p,
                     PrimaryPart = c
                 })
@@ -352,7 +352,7 @@ local function CharAdded(char)
         end)
     else
         ESP:Add(char, {
-            Name = ("[%s] - (%s)"):format(p.Name, race),
+            Name = ("[%s]\n[%s/%s] [%s]"):format(p.Name, char:FindFirstChild("Humanoid") and char.Humanoid.Health or "idk", char:FindFirstChild("Humanoid") and char.Humanoid.MaxHealth or "idk", race),
             Player = p,
             PrimaryPart = char.HumanoidRootPart
         })
