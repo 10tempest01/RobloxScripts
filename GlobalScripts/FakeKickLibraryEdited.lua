@@ -20,7 +20,7 @@ local Message = {}
 
 function Message:Kick(msg, buttontxt, errcode)
 local FakeKick = Instance.new("ScreenGui")
-if syn.protect_gui then syn.protect_gui(FakeKick) end
+if protect_gui then protect_gui(FakeKick) end
 local promptOverlay = Instance.new("Frame")
 local ErrorPrompt = Instance.new("Frame")
 local PromptLayout = Instance.new("UIListLayout")
