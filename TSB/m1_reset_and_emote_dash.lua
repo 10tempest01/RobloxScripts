@@ -15,8 +15,8 @@ local function frontDash()
 end
 
 local function noEndlagSetup(char)
-	uis.InputBegan:Connect(function(input, gameproc)
-		if gameproc then return end
+	uis.InputBegan:Connect(function(input, t)
+		if t then return end
 		
 		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.D) and not uis:IsKeyDown(Enum.KeyCode.A) and not uis:IsKeyDown(Enum.KeyCode.S) and char:FindFirstChild("UsedDash") then
 			frontDash()
@@ -38,16 +38,33 @@ local function stopAnimation(char, animationId)
     end
 end
 
+local function isAnimationRunning(char, animationId)
+	local humanoid = char:FindFirstChildWhichIsA("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildWhichIsA("Animator")
+        if animator then
+            for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
+                if track.Animation and track.Animation.AnimationId == "rbxassetid://" .. tostring(animationId) then
+					return true
+				else
+					return false
+                end
+            end
+        end
+    end
+end
+
 local function emoteDashSetup(char)
 	local hrp = char:WaitForChild("HumanoidRootPart")
-	uis.InputBegan:Connect(function(input, gameproc)
-		if gameproc then return end
+	uis.InputBegan:Connect(function(input, t)
+		if t then return end
 		
-		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) then
+		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) and not uis:IsKeyDown(Enum.KeyCode.S) and not isAnimationRunning(char, 10491993682) then
 			local vel = hrp:FindFirstChild("dodgevelocity")
 			if vel then
 				vel:Destroy()
-				stopAnimation(char, 10480793962)
+				stopAnimation(char, 10480793962) -- side dash right
+				stopAnimation(char, 10480796021) -- side dash left
 			end
 		end
 	end)
@@ -63,11 +80,11 @@ plr.CharacterAdded:Connect(noEndlagSetup)
 
 if not getgenv().DisableNotification then
 	stgui:SetCore("SendNotification", {
-		Title = "[Loaded] Made by Galestrike",  -- Title of the notification
+		Title = "[Loaded] Made by Galestrike",
 		Icon = "rbxassetid://107722845930572",
-		Text = "Thanks for using!", -- Message inside the notification
-		Duration = 5, -- Duration in seconds
-		Button1 = "Dismiss", -- Optional button text
+		Text = "Thanks for using!",
+		Duration = 5,
+		Button1 = "Dismiss",
 		Callback = function() end
 	})
 end
