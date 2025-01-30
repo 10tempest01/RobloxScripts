@@ -59,7 +59,7 @@ local function emoteDashSetup(char)
 	uis.InputBegan:Connect(function(input, t)
 		if t then return end
 		
-		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) and not uis:IsKeyDown(Enum.KeyCode.S) and not isAnimationRunning(char, 10491993682) then
+		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) and not uis:IsKeyDown(Enum.KeyCode.S) and not isAnimationRunning(char, 10491993682) --[[backdash]] then
 			local vel = hrp:FindFirstChild("dodgevelocity")
 			if vel then
 				vel:Destroy()
