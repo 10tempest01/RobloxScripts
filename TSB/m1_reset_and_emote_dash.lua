@@ -81,7 +81,7 @@ plr.CharacterAdded:Connect(noEndlagSetup)
 if not getgenv().DisableNotification then
 	stgui:SetCore("SendNotification", {
 		Title = "[Loaded] Made by Tempest",
-		Icon = "rbxassetid://81070968158349",
+		Icon = "rbxassetid://134296412574194",
 		Text = "Thanks for using!",
 		Duration = 5,
 		Button1 = "Dismiss",
