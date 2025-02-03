@@ -1,6 +1,20 @@
 local plr = game:GetService("Players").LocalPlayer
 local uis = game:GetService("UserInputService")
 local stgui = game:GetService("StarterGui")
+getgenv().Toggle = true
+
+-- for people with the old version
+if not getgenv().ToggleKeyBind then
+    stgui:SetCore("SendNotification", {
+		Title = "[WARNING] Old Version",
+		Icon = "rbxassetid://134296412574194",
+		Text = "You have the old version of the script, please contact me at @10.tempest.01 on Discord for the new version",
+		Duration = 5,
+		Button1 = "Dismiss",
+		Callback = function() end
+	})
+    return
+end
 
 local frontDashArgs = {
 	[1] = {
@@ -15,13 +29,17 @@ local function frontDash()
 end
 
 local function noEndlagSetup(char)
-	uis.InputBegan:Connect(function(input, t)
+	local connection = uis.InputBegan:Connect(function(input, t)
 		if t then return end
 		
-		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.D) and not uis:IsKeyDown(Enum.KeyCode.A) and not uis:IsKeyDown(Enum.KeyCode.S) and char:FindFirstChild("UsedDash") then
+		if getgenv().Toggle and input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.D) and not uis:IsKeyDown(Enum.KeyCode.A) and not uis:IsKeyDown(Enum.KeyCode.S) and char:FindFirstChild("UsedDash") then
 			frontDash()
 		end
 	end)
+
+    char.Destroying:Connect(function()
+        connection:Disconnect()
+    end)
 end
 
 local function stopAnimation(char, animationId)
@@ -56,10 +74,10 @@ end
 
 local function emoteDashSetup(char)
 	local hrp = char:WaitForChild("HumanoidRootPart")
-	uis.InputBegan:Connect(function(input, t)
+	local connection = uis.InputBegan:Connect(function(input, t)
 		if t then return end
 		
-		if input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) and not uis:IsKeyDown(Enum.KeyCode.S) and not isAnimationRunning(char, 10491993682) --[[backdash]] then
+		if getgenv().Toggle and input.KeyCode == Enum.KeyCode.Q and not uis:IsKeyDown(Enum.KeyCode.W) and not uis:IsKeyDown(Enum.KeyCode.S) and not isAnimationRunning(char, 10491993682) --[[backdash]] then
 			local vel = hrp:FindFirstChild("dodgevelocity")
 			if vel then
 				vel:Destroy()
@@ -68,6 +86,10 @@ local function emoteDashSetup(char)
 			end
 		end
 	end)
+
+    char.Destroying:Connect(function()
+        connection:Disconnect()
+    end)
 end
 
 if plr.Character then
@@ -77,6 +99,20 @@ end
 
 plr.CharacterAdded:Connect(emoteDashSetup)
 plr.CharacterAdded:Connect(noEndlagSetup)
+
+uis.InputBegan:Connect(function(input, t)
+    if t then return end
+    if input.KeyCode == getgenv().ToggleKeyBind then
+        getgenv().Toggle = not getgenv().Toggle
+        stgui:SetCore("SendNotification", {
+            Title = "[Script] Toggled",
+            Icon = "rbxassetid://134296412574194",
+            Text = "Script has been toggled " .. ((getgenv().Toggle and "ON") or "OFF"),
+            Duration = 5,
+            Callback = function() end
+	    })
+    end
+end)
 
 if not getgenv().DisableNotification then
 	stgui:SetCore("SendNotification", {
