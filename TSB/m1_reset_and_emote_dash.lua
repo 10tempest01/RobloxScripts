@@ -2,6 +2,20 @@ local plr = (game:GetService("Players")).LocalPlayer
 local uis = game:GetService("UserInputService")
 local stgui = game:GetService("StarterGui")
 getgenv().Toggle = true
+getgenv().AlreadyRan1537896 = true
+
+if getgenv().AlreadyRan1537896 then
+	stgui:SetCore("SendNotification", {
+		Title = "[WARNING] Already Running",
+		Icon = "rbxassetid://134296412574194",
+		Text = "The script is already running!",
+		Duration = 5,
+		Button1 = "Dismiss",
+		Callback = function()
+		end
+	})
+	return
+end
 
 if not getgenv().ToggleKeyBind then
 	stgui:SetCore("SendNotification", {
