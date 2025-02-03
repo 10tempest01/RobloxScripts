@@ -118,7 +118,7 @@ end)
 
 if not (getgenv()).DisableNotification then
 	stgui:SetCore("SendNotification", {
-		Title = "[Loaded] Made by Tempest",
+		Title = "[Loaded] Tempest Reset v1.1",
 		Icon = "rbxassetid://134296412574194",
 		Text = "Thanks for using!",
 		Duration = 5,
