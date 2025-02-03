@@ -5,7 +5,7 @@ getgenv().Toggle = true
 
 if getgenv().AlreadyRan1537896 then
 	stgui:SetCore("SendNotification", {
-		Title = "[WARNING] Already Running",
+		Title = "[WARNING] Running",
 		Icon = "rbxassetid://134296412574194",
 		Text = "The script is already running!",
 		Duration = 5,
