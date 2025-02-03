@@ -2,7 +2,6 @@ local plr = (game:GetService("Players")).LocalPlayer
 local uis = game:GetService("UserInputService")
 local stgui = game:GetService("StarterGui")
 getgenv().Toggle = true
-getgenv().AlreadyRan1537896 = true
 
 if getgenv().AlreadyRan1537896 then
 	stgui:SetCore("SendNotification", {
@@ -16,6 +15,8 @@ if getgenv().AlreadyRan1537896 then
 	})
 	return
 end
+
+getgenv().AlreadyRan1537896 = true
 
 if not getgenv().ToggleKeyBind then
 	stgui:SetCore("SendNotification", {
