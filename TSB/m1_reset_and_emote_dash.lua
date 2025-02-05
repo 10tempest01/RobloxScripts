@@ -1,4 +1,12 @@
-game.Players.LocalPlayer:Kick("\nThis script has been discontinued. Join discord.gg/ewjaP4Q8dw for new version + more info. The invite should be copied to your clipboard if your executor supports it.")
+game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "[WARNING] Discontinued",
+		Icon = "rbxassetid://134296412574194",
+		Text = "This script has been discontinued. Join discord.gg/ewjaP4Q8dw for new version + more info. The invite should be copied to your clipboard if your executor supports it.",
+		Duration = 5,
+		Button1 = "Dismiss",
+		Callback = function()
+		end
+})
 setclipboard("https://discord.gg/ewjaP4Q8dw")
 --[[
 local plr = (game:GetService("Players")).LocalPlayer
