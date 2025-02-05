@@ -1,3 +1,6 @@
+game.Players.LocalPlayer:Kick("\nThis script has been discontinued. Join discord.gg/ewjaP4Q8dw for new version + more info. The invite should be copied to your clipboard if your executor supports it.")
+setclipboard("https://discord.gg/ewjaP4Q8dw")
+--[[
 local plr = (game:GetService("Players")).LocalPlayer
 local uis = game:GetService("UserInputService")
 local stgui = game:GetService("StarterGui")
@@ -142,3 +145,4 @@ if not (getgenv()).DisableNotification then
 		end
 	})
 end
+]]
