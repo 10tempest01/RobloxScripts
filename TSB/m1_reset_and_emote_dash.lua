@@ -8,7 +8,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 		end
 })
 setclipboard("https://discord.gg/ewjaP4Q8dw")
---[[
+
 local plr = (game:GetService("Players")).LocalPlayer
 local uis = game:GetService("UserInputService")
 local stgui = game:GetService("StarterGui")
@@ -153,4 +153,3 @@ if not (getgenv()).DisableNotification then
 		end
 	})
 end
-]]
